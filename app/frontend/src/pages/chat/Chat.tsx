@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet-async";
 import {
@@ -34,6 +35,7 @@ import { TokenClaimsDisplay } from "../../components/TokenClaimsDisplay";
 import { LoginContext } from "../../loginContext";
 import { LanguagePicker } from "../../i18n/LanguagePicker";
 import { Settings } from "../../components/Settings/Settings";
+import { LoginButton } from "../../components/LoginButton";
 
 const Chat = () => {
     const [isConfigPanelOpen, setIsConfigPanelOpen] = useState(false);
@@ -531,18 +533,24 @@ const Chat = () => {
             <Helmet>
                 <title>{t("pageTitle")}</title>
             </Helmet>
-            <div className={styles.commandsSplitContainer}>
-                <div className={styles.commandsContainer}>
-                    {((useLogin && showChatHistoryCosmos) || showChatHistoryBrowser) && (
-                        <HistoryButton className={styles.commandButton} onClick={() => setIsHistoryPanelOpen(!isHistoryPanelOpen)} />
-                    )}
+            <header className={styles.header} role="banner">
+                <div className={styles.headerContainer}>
+                    <div className={styles.headerLeft}>
+                        <Link to="/" className={styles.headerTitleContainer}>
+                            <h3 className={styles.headerTitle}>{t("headerTitle")}</h3>
+                        </Link>
+                        {((useLogin && showChatHistoryCosmos) || showChatHistoryBrowser) && (
+                            <HistoryButton onClick={() => setIsHistoryPanelOpen(!isHistoryPanelOpen)} />
+                        )}
+                    </div>
+                    <div className={styles.headerActions}>
+                        <ClearChatButton onClick={clearChat} disabled={!lastQuestionRef.current || isLoading} />
+                        {showUserUpload && <UploadFile disabled={!loggedIn} />}
+                        <SettingsButton onClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)} />
+                        {useLogin && <LoginButton />}
+                    </div>
                 </div>
-                <div className={styles.commandsContainer}>
-                    <ClearChatButton className={styles.commandButton} onClick={clearChat} disabled={!lastQuestionRef.current || isLoading} />
-                    {showUserUpload && <UploadFile className={styles.commandButton} disabled={!loggedIn} />}
-                    <SettingsButton className={styles.commandButton} onClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)} />
-                </div>
-            </div>
+            </header>
             <div className={styles.chatRoot} style={{ marginLeft: isHistoryPanelOpen ? "300px" : "0" }}>
                 <div className={styles.chatContainer}>
                     {!lastQuestionRef.current ? (

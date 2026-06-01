@@ -1,6 +1,6 @@
 {
-    "pageTitle": "Azure OpenAI + AI Search",
-    "headerTitle": "Azure OpenAI + AI Search",
+    "pageTitle": "Deep.KBB Chat",
+    "headerTitle": "Deep.KBB Knowledgebase Chat",
     "chat": "Chat",
     "login": "Login",
     "logout": "Logout",
@@ -32,12 +32,12 @@
         "fileDeleted": "File deleted"
     },
     "developerSettings": "Developer settings",
-    "chatEmptyStateTitle": "Chat with your data",
-    "chatEmptyStateSubtitle": "Ask anything or try an example",
+    "chatEmptyStateTitle": "Glückauf,",
+    "chatEmptyStateSubtitle": "Stelle eine Frage.",
     "defaultExamples": {
-        "1": "What is included in my Northwind Health Plus plan that is not in standard?",
-        "2": "What happens in a performance review?",
-        "3": "What does a Product Manager do?",
+        "1": "What happens to the brine during cavern construction Islandmagee?",
+        "2": "Wo kommt das Frischwasser her und wie wird es in die Kaverne Islandmagee geleitet?",
+        "3": "What tests were carried out and what were the results Krummhörn K6?",
         "placeholder": "Type a new question (e.g. does my plan cover annual eye exams?)"
     },
     "askTitle": "Ask your data",

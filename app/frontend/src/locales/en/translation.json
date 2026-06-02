@@ -31,14 +31,14 @@
         "errorDeleting": "Error deleting.",
         "fileDeleted": "File deleted"
     },
-    "developerSettings": "Developer settings",
+    "developerSettings": "Settings",
     "chatEmptyStateTitle": "Glückauf,",
     "chatEmptyStateSubtitle": "Stelle eine Frage.",
     "defaultExamples": {
         "1": "What happens to the brine during cavern construction Islandmagee?",
         "2": "Wo kommt das Frischwasser her und wie wird es in die Kaverne Islandmagee geleitet?",
         "3": "What tests were carried out and what were the results Krummhörn K6?",
-        "placeholder": "Type a new question (e.g. does my plan cover annual eye exams?)"
+        "placeholder": "Type a new question"
     },
     "askTitle": "Ask your data",
     "multimodalExamples": {
